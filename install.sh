@@ -25,11 +25,16 @@ source venv/bin/activate
 echo "Installing dependencies..."
 pip install -r requirements.txt
 
-# Check if .env exists, if not, create it from template
+# Check if .env exists, if not, create it from .env.template
 if [ ! -f ".env" ]; then
-    echo "Creating .env file from template..."
-    cp .env.template .env
-    echo ".env file created. Please update your credentials in the .env file."
+    if [ -f ".env.template" ]; then
+        echo "Creating .env file from .env.template..."
+        cp .env.template .env
+        echo ".env file created. Please update your credentials in the .env file."
+    else
+        echo "Error: .env.template not found in the repository."
+        exit 1
+    fi
 else
     echo ".env file already exists. Skipping creation..."
 fi
