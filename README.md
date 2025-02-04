@@ -1,4 +1,4 @@
 # autorunner
 ```bash
-curl -sSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/autorunner/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/ali3nw3rx/autorunner/main/install.sh | bash
 ```
