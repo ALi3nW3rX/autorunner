@@ -1,6 +1,4 @@
 #!/bin/bash
-
-# Check if the directory already exists
 if [ -d "autorunner" ]; then
     echo "Directory 'autorunner' already exists. Skipping cloning..."
 else
@@ -10,7 +8,6 @@ fi
 
 cd autorunner
 
-# Set up the virtual environment
 if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."
     python3 -m venv venv
@@ -18,11 +15,21 @@ else
     echo "Virtual environment already exists. Skipping creation..."
 fi
 
-# Activate the virtual environment
 source venv/bin/activate
 
-# Install dependencies
 echo "Installing dependencies..."
 pip install -r requirements.txt
 
-echo "Setup complete! Run the script with: source venv/bin/activate && python autorunner.py"
+echo "Setup complete! Run the script with:"
+
+
+echo "*******************************************"
+echo "*                                         *"
+echo "*             INSTRUCTIONS                *"
+echo "*                                         *"
+echo "*******************************************"
+echo "1. cd autorunner"
+echo "2. nano .env # Add your credentials"
+echo "3. source venv/bin/activate && python autorunner.py"
+echo "*******************************************"
+
