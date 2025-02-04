@@ -1,6 +1,7 @@
 #!/bin/bash
 git clone https://github.com/ALi3nW3rX/autorunner.git
 cd autorunner
+chmod +x install.sh
 bash install.sh
 echo "Setting up the environment..."
 python -m venv venv
